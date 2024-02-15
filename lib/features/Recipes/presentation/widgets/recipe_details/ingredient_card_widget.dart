@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class IngredientCardWidget extends StatelessWidget {
   final String ingredient;
   const IngredientCardWidget({
-    Key? key,
+    super.key,
     required this.ingredient,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

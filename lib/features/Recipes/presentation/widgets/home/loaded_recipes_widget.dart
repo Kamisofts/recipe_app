@@ -9,6 +9,7 @@ import '../../../domain/entities/model_recipe.dart';
 
 class LoadedRecipesWidget extends StatelessWidget {
   final List<ModelRecipe> recipes;
+
   const LoadedRecipesWidget({
     super.key,
     required this.recipes,
@@ -16,27 +17,34 @@ class LoadedRecipesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList.builder(
-        itemCount: recipes.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              sl<RecipeBloc>().add(SelectRecipesEvent(recipe: recipes[index] ));
+    return SliverGrid.builder(
+      itemCount: recipes.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            sl<RecipeBloc>().add(SelectRecipesEvent(recipe: recipes[index]));
 
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const RecipeDetailsScreen()));
-              // Navigator.of(context).pushNamed(
-              //   'recipe_details',
-              //   arguments: recipes[index],
-              // );
-            },
-            child: RecipeCardWidget(recipeMdl: recipes[index],).animate().slideX(
-                duration: 200.ms,
-                delay: 0.ms,
-                begin: 1,
-                end: 0,
-                curve: Curves.easeInOutSine),
-          );
-        });
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const RecipeDetailsScreen()));
+            // Navigator.of(context).pushNamed(
+            //   'recipe_details',
+            //   arguments: recipes[index],
+            // );
+          },
+          child: RecipeCardWidget(
+            recipeMdl: recipes[index],
+          ).animate().slideX(
+              duration: 200.ms,
+              delay: 0.ms,
+              begin: 1,
+              end: 0,
+              curve: Curves.easeInOutSine),
+        );
+      },
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 0.6
+      ),
+    );
   }
 }

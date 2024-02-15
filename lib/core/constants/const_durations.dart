@@ -1,6 +1,6 @@
 import 'package:flutter_animate/flutter_animate.dart';
 
-class ConstDurations{
+class ConstDurations {
   // On Boarding Screen
 
   static final mainPlayDuration = 1000.ms;
@@ -9,7 +9,6 @@ class ConstDurations{
   static final descriptionDelayDuration = titleDelayDuration + 300.ms;
   static final buttonDelayDuration = descriptionDelayDuration + 100.ms;
   static final buttonPlayDuration = mainPlayDuration - 200.ms;
-
 
   // Home Screen
   static final avatarPlayDuration = 500.ms;
@@ -24,12 +23,13 @@ class ConstDurations{
   static final selectedCategoryDelayDuration =
       categoryListDelayDuration + categoryListPlayDuration;
 
-
-
   // Details Screen
-  static         final appBarPlayTime = 800.ms;
+  static final appBarPlayTime = 800.ms;
   static final appBarDelayTime = 400.ms;
   static final infoDelayTime = appBarPlayTime + appBarDelayTime - 200.ms;
   static final infoPlayTime = 500.ms;
   static final dishPlayTime = 600.ms;
+
+  // Recipe Card
+  static final playDuration = 600.ms;
 }

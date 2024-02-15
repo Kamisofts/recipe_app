@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../../../core/constants/const_durations.dart';
 import '../../../domain/entities/model_recipe.dart';
 
 
@@ -14,28 +16,28 @@ class RecipeCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playDuration = 600.ms;
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxHeight: 200),
+
+    return SizedBox(
+      height: 50.h,
       child: Card(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _AnimatedImageWidget(
               imageUrl: recipeMdl.imageUrl!,
-              playDuration: playDuration,
+              playDuration: ConstDurations.playDuration,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _AnimatedNutritionText(
-                  playDuration: playDuration,
+                  playDuration: ConstDurations.playDuration,
                   nutrition: recipeMdl.nutrition!,
                 ),
                 _AnimatedNameWidget(
-                    playDuration: playDuration, name: recipeMdl.name!),
+                    playDuration: ConstDurations.playDuration, name: recipeMdl.name!),
                 _AnimatedDescriptionWidget(
-                    playDuration: playDuration, description: recipeMdl.description!)
+                    playDuration: ConstDurations.playDuration, description: recipeMdl.description!)
               ],
             )
           ],
@@ -49,10 +51,10 @@ class _AnimatedNutritionText extends StatelessWidget {
   final Duration playDuration;
   final Map<String, dynamic> nutrition;
   const _AnimatedNutritionText({
-    Key? key,
+    super.key,
     required this.playDuration,
     required this.nutrition,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +79,10 @@ class _AnimatedImageWidget extends StatelessWidget {
   final Duration playDuration;
   final String imageUrl;
   const _AnimatedImageWidget({
-    Key? key,
+    super.key,
     required this.playDuration,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -101,10 +103,10 @@ class _AnimatedNameWidget extends StatelessWidget {
   final Duration playDuration;
   final String name;
   const _AnimatedNameWidget({
-    Key? key,
+    super.key,
     required this.playDuration,
     required this.name,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -129,10 +131,10 @@ class _AnimatedDescriptionWidget extends StatelessWidget {
   final Duration playDuration;
   final String description;
   const _AnimatedDescriptionWidget({
-    Key? key,
+    super.key,
     required this.playDuration,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+
           _showRecipeList
               ? const AnimatedRecipesWidget()
               : const SliverToBoxAdapter(
