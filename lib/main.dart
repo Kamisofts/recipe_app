@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_app/core/utils/main_method.dart';
-import 'package:recipe_app/features/Recipes/presentation/blocs/recipe_bloc/recipe_bloc.dart';
+import 'package:recipe_app/features/recipes/presentation/blocs/recipe_bloc/recipe_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'core/theme/app_theme.dart';
 import 'core/utils/injections.dart';
-import 'features/OnBoardingScreens/presentation/pages/onboarding_screen.dart';
+import 'features/on_boarding/presentation/pages/onboarding_screen.dart';
 
 void main() {
   MainMethods.init();

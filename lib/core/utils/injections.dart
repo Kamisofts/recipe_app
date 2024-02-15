@@ -1,11 +1,11 @@
 
 import 'package:get_it/get_it.dart';
-import 'package:recipe_app/features/Recipes/data/data_sources/recipe_database.dart';
-import 'package:recipe_app/features/Recipes/data/data_sources/recipe_database_impl.dart';
-import 'package:recipe_app/features/Recipes/data/repositories/recipe_repository_impl.dart';
-import 'package:recipe_app/features/Recipes/domain/repositories/recipe_repository.dart';
-import 'package:recipe_app/features/Recipes/domain/use_cases/get_all_recipe_use_case.dart';
-import 'package:recipe_app/features/Recipes/presentation/blocs/recipe_bloc/recipe_bloc.dart';
+import 'package:recipe_app/features/recipes/data/data_sources/recipe_database.dart';
+import 'package:recipe_app/features/recipes/data/data_sources/recipe_database_impl.dart';
+import 'package:recipe_app/features/recipes/data/repositories/recipe_repository_impl.dart';
+import 'package:recipe_app/features/recipes/domain/repositories/recipe_repository.dart';
+import 'package:recipe_app/features/recipes/domain/use_cases/get_all_recipe_use_case.dart';
+import 'package:recipe_app/features/recipes/presentation/blocs/recipe_bloc/recipe_bloc.dart';
 
 
 final sl = GetIt.instance;
